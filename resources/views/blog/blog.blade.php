@@ -29,9 +29,17 @@
                             </p>
                         </div>
 
+                        <div>
+                            <p class="mt-6 text-sm text-blue-400">
+                                <span class="inline-block py-1 px-3 text-xs font-semibold bg-blue-100 text-blue-600 rounded-xl mr-3">
+                                    {{ implode(', ', $post->tags->pluck('name')->toArray()) }}
+                                </span>
+                            </p>
+                        </div>
+
                         <footer class="flex justify-between items-center mt-8">
                             <div class="flex items-center text-sm">
-                                <img src="{{ $post->author->avatar }}" alt="Author avatar" class="h-24">
+                                <img src="{{ $post->author->avatar }}" alt="Author avatar" class="h-24 rounded-xl">
                                 <div class="ml-3">
                                     <h5 class="font-bold">{{ $post->author->name }}</h5>
                                 </div>
