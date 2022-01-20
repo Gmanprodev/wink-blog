@@ -13,13 +13,6 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    // protected $posts;
-
-    // public function __construct() 
-    // {
-    //     // Fetch the Site Settings object
-    //     $this->posts = WinkPost::with('author')->orderBy('created_at', 'desc')->get();
-    //     View::share('posts', $this->posts);
-    // }
+  
 
 }

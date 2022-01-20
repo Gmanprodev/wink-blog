@@ -17,7 +17,14 @@ class PostController extends Controller
     }
 
     public function blog() {
-        $posts = WinkPost::with('author')->orderBy('created_at', 'desc')->get();
+        $tag = $_GET["tag"] ??false;
+        $posts = WinkPost::with('author');
+        if($tag) {
+            $posts->whereHas('tags', function($query) use ($tag) {
+                $query->where('slug', $tag);
+            });
+        }
+        $posts=$posts->orderBy('created_at', 'desc')->get();
         return view('blog.blog')->with('posts', $posts);
     }
 
