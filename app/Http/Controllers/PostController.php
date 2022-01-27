@@ -16,6 +16,10 @@ class PostController extends Controller
         return view('blog.show')->with('post', $post);
     }
 
+    public function contact(WinkPost $post) {
+        return view('blog.contact')->with('post', $post);
+    }
+
     public function blog() {
         $tag = $_GET["tag"] ??false;
         $posts = WinkPost::with('author');

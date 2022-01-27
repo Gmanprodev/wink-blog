@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,8 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [PostController::class, 'index'])->name('posts.index');
 Route::get('/blog', [PostController::class, 'blog'])->name('posts.blog');
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+Route::post('/contact/subscribe', [ContactController::class, 'subscribe'])->name('contact.subscribe');
 Route::get('/{post:slug}', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/dashboard', function () {
